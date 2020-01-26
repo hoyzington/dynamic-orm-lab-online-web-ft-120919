@@ -47,11 +47,11 @@ class InteractiveRecord
     @id = DB[:conn].execute(sql2)[0][0]
   end
 
-  def self.find_by_name
-    
+  def self.find_by_name(name)
+    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ?", name)
   end
 
-  def self.find_by
+  def self.find_by(attribute)
     
   end
 
