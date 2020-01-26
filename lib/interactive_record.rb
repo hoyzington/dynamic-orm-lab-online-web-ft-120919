@@ -42,7 +42,6 @@ class InteractiveRecord
       INSERT INTO #{table_name_for_insert} (#{col_names_for_insert})
       VALUES (#{values_for_insert})
     SQL
-#binding.pry
     DB[:conn].execute(sql1)
     sql2 = "SELECT last_insert_rowid() FROM #{table_name_for_insert}"
     @id = DB[:conn].execute(sql2)[0][0]
