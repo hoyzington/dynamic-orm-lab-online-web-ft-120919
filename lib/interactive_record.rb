@@ -15,8 +15,6 @@ class InteractiveRecord
     columns.compact
   end
   
-  def 
-    
-  end
+  
   
 end
