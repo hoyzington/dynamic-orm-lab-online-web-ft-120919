@@ -15,7 +15,7 @@ class InteractiveRecord
     columns.compact
   end
   
-  def initialize()
+  def 
     
   end
   
