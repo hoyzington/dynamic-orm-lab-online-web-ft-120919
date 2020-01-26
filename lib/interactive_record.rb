@@ -53,7 +53,8 @@ class InteractiveRecord
 
   def self.find_by(attribute_hash)
     attribute_hash.each do |key, value|
-    DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{key.to_s} = ?", value)
+      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{key.to_s} = ?", value)
+    end
   end
 
 
