@@ -40,10 +40,10 @@ class InteractiveRecord
   def save
     sql1 = <<-SQL
       INSERT INTO #{table_name_for_insert} (#{col_names_for_insert})
-      VALUES (?)
+      VALUES (#{values_for_insert})
     SQL
 #binding.pry
-    DB[:conn].execute(sql1, values_for_insert)
+    DB[:conn].execute(sql1)
     sql2 = "SELECT last_insert_rowid() FROM #{table_name_for_insert}"
     @id = DB[:conn].execute(sql2)[0][0]
   end
