@@ -1,3 +1,5 @@
+require 'pry'
+
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
 
@@ -40,6 +42,7 @@ class InteractiveRecord
       INSERT INTO #{table_name_for_insert} (#{col_names_for_insert})
       VALUES (?)
     SQL
+binding.pry
     DB[:conn].execute(sql1, [values_for_insert])
     sql2 = "SELECT last_insert_rowid() FROM #{table_name_for_insert}"
     @id = DB[:conn].execute(sql2)[0][0]
