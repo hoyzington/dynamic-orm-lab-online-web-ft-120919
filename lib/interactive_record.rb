@@ -15,6 +15,8 @@ class InteractiveRecord
     columns.compact
   end
   
-  
+  def initialize(attrs={})
+    attrs.each {|a, value| self.send("#{a}=", value)}
+  end
   
 end
