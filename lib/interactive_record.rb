@@ -59,7 +59,6 @@ class InteractiveRecord
       value = v
     end
     DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{column} = ?", value)
-    end
   end
 
 
