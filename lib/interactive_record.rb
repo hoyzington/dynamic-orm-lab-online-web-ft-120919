@@ -19,4 +19,13 @@ class InteractiveRecord
     attrs.each {|a, value| self.send("#{a}=", value)}
   end
   
+  def table_name_for_insert
+    
+  end
+
+  def 
+    
+  end
+
+
 end
